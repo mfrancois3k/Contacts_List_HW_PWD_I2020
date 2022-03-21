@@ -4,8 +4,7 @@ import ContactList from "./compontents/ContactList.jsx";
 function App() {
   return (
     <div className="App">
-      <h1>Contact List</h1>
-      {ContactList}
+      <ContactList />
     </div>
   );
 }

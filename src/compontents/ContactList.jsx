@@ -1,21 +1,15 @@
 import "../App.css";
-import ContactCard from "../compontents/ContactCard.jsx";
+import Contact from "./Contact.jsx";
 import data from "../data/contacts.json";
 
-function Contactlist() {
-  const list = data.results.map((item) => (
-    <ContactCard
-      image={item.picture.large}
-      name={item.picture.name.first + " " + item.name.last}
-      home={item.phone}
-      mobile={item.cell}
-    />
-  ));
+function ContactList() {
   return (
-    <>
-      <div className="container">{list}</div>;
-    </>
+    <div className="container">
+      {data.results.map((contact, index) => {
+        return <Contact key={index} {...contact} />;
+      })}
+    </div>
   );
 }
 
-export default Contactlist;
+export default ContactList;
